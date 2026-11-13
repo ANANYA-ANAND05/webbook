@@ -1,3 +1,4 @@
+
 pipeline {
     agent any
 
@@ -12,7 +13,7 @@ pipeline {
         stage('Build & Execute Script') {
             steps {
                 echo 'Running web.py...'
-                bat '"C:\Users\STUDENT\AppData\Local\Programs\Python\Python313\python.exe" web.py'
+                bat '"C:/Users/STUDENT/AppData/Local/Programs/Python/Python313/python.exe" web.py'
             }
         }
 
@@ -21,13 +22,14 @@ pipeline {
                 echo 'Verifying pipeline execution...'
                 bat 'echo "Python script executed successfully!"'
             }
-        
+        }
     }
 
     post {
         success {
             echo 'SUCCESS: CI Pipeline completed successfully!'
         }
+
         failure {
             echo 'FAILURE: Pipeline failed. Check build logs.'
         }
