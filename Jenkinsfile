@@ -12,7 +12,7 @@ pipeline {
         stage('Build & Execute Script') {
             steps {
                 echo 'Running web.py...'
-                bat 'python web.py'
+                bat '"C:\Users\STUDENT\AppData\Local\Programs\Python\Python313\python.exe" web.py'
             }
         }
 
@@ -21,7 +21,7 @@ pipeline {
                 echo 'Verifying pipeline execution...'
                 bat 'echo "Python script executed successfully!"'
             }
-        }
+        
     }
 
     post {
